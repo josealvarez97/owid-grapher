@@ -170,7 +170,7 @@ export class AdminApp extends React.Component<{
                             <Route
                                 exact
                                 path={`/${EXPLORERS_ROUTE_FOLDER}`}
-                                render={({ match }) => (
+                                render={() => (
                                     <AdminLayout title="Explorers">
                                         <ExplorersIndexPage />
                                     </AdminLayout>
@@ -179,16 +179,12 @@ export class AdminApp extends React.Component<{
                             <Route
                                 exact
                                 path={`/bulk-grapher-config-editor`}
-                                render={({ match }) => (
-                                    <BulkGrapherConfigEditorPage />
-                                )}
+                                render={() => <BulkGrapherConfigEditorPage />}
                             />
                             <Route
                                 exact
                                 path={`/variable-annotations`}
-                                render={({ match }) => (
-                                    <VariablesAnnotationPage />
-                                )}
+                                render={() => <VariablesAnnotationPage />}
                             />
                             <Route
                                 exact

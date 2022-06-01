@@ -20,13 +20,11 @@ import {
 import { grapherSlugToHtmlPage } from "../baker/GrapherBaker.js"
 import {
     BAKED_BASE_URL,
-    BAKED_GRAPHER_URL,
     WORDPRESS_DIR,
     BASE_DIR,
     BAKED_SITE_DIR,
 } from "../settings/serverSettings.js"
 
-import * as db from "../db/db.js"
 import { expectInt, renderToHtmlPage } from "../serverUtils/serverUtil.js"
 import {
     countryProfilePage,

@@ -2,7 +2,7 @@ import * as db from "../db.js"
 import { Knex } from "knex"
 import { PostRow } from "../../clientUtils/owidTypes.js"
 
-export namespace Post {
+declare namespace Post {
     export const table = "posts"
 
     export const select = <K extends keyof PostRow>(
@@ -32,7 +32,10 @@ export namespace Post {
         return tagsByPostId
     }
 
-    export const setTags = async (postId: number, tagIds: number[]) =>
+    export const setTags = async (
+        postId: number,
+        tagIds: number[]
+    ): Promise<void> =>
         await db.transaction(async (t) => {
             const tagRows = tagIds.map((tagId) => [tagId, postId])
             await t.execute(`DELETE FROM post_tags WHERE post_id=?`, [postId])

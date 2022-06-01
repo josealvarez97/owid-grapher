@@ -131,7 +131,7 @@ export class EntitySelectorModal extends React.Component<{
         this.props.selectionArray.clearSelection()
     }
 
-    renderSelectedData() {
+    renderSelectedData(): React.ReactNode {
         const selectedEntityNames =
             this.props.selectionArray.selectedEntityNames
 

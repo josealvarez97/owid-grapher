@@ -3,14 +3,13 @@
 import React from "react"
 
 import { DataTable } from "./DataTable.js"
-import { Grapher } from "../core/Grapher.js"
 import { ChartTypeName, GrapherTabOption } from "../core/GrapherConstants.js"
 import {
     childMortalityGrapher,
     IncompleteDataTable,
 } from "./DataTable.sample.js"
 
-import { shallow, ShallowWrapper, mount, ReactWrapper, configure } from "enzyme"
+import { shallow, mount, ReactWrapper, configure } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 configure({ adapter: new Adapter() })
 

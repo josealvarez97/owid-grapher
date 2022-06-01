@@ -41,6 +41,13 @@ const AdditionalInformation = ({
     const classes = [CLASS_NAME]
 
     useEffect(() => {
+        const onOpenHandler = () => {
+            setHeight("auto")
+            if (!hasBeenOpened) {
+                setHasBeenOpened(true)
+            }
+        }
+
         if (refContainer.current) {
             // Trigger embedder check for new figures that may have become visible.
             MultiEmbedderSingleton.observeFigures(refContainer.current)
@@ -53,13 +60,6 @@ const AdditionalInformation = ({
 
     const onClickHandler = () => {
         setHeight(height === 0 ? "auto" : 0)
-        if (!hasBeenOpened) {
-            setHasBeenOpened(true)
-        }
-    }
-
-    const onOpenHandler = () => {
-        setHeight("auto")
         if (!hasBeenOpened) {
             setHasBeenOpened(true)
         }

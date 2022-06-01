@@ -2231,7 +2231,7 @@ apiRouter.get("/posts/:postId.json", async (req: Request, res: Response) => {
         .where({ id: postId })
         .select("*")
         .first()) as PostRow | undefined
-    return camelCaseProperties(post)
+    return camelCaseProperties({ ...post })
 })
 
 apiRouter.get("/importData.json", async (req) => {

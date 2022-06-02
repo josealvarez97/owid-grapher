@@ -4,6 +4,15 @@ export const EPOCH_DATE = "2020-01-21"
 /** The "plot" is a chart without any header, footer or controls */
 export const IDEAL_PLOT_ASPECT_RATIO: number = 1.8
 
+// any valid JSON is of this format
+export type JSONValue = string | number | boolean | JSONObject | JSONArray
+
+export interface JSONObject {
+    [x: string]: JSONValue | undefined
+}
+
+export type JSONArray = Array<JSONValue | undefined>
+
 export interface Box {
     x: number
     y: number

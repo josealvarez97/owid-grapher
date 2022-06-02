@@ -4,8 +4,10 @@ import { GrapherConfigPatch } from "./AdminSessionTypes.js"
 import { isArray, isEqual, checkIsPlainObjectWithGuard } from "./Util.js"
 
 export function setValueRecursiveInplace(
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     json: any,
     pointer: string[],
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     newValue: any
 ): any {
     if (pointer.length === 0) throw new Error("Pointer must not be empty")
@@ -44,8 +46,10 @@ export function setValueRecursiveInplace(
 }
 
 export function setValueRecursive(
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     json: any,
     pointer: string[],
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     newValue: any
 ): any {
     // If the pointer is empty at this recursion level then just return newValue
